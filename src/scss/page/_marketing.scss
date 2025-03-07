@@ -1,0 +1,36 @@
+@use "../base/mixin" as *;
+
+.section.-marketing {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  
+  .list-marketing {
+    display: grid;
+    grid-gap: 32px;
+    grid-template-columns: repeat(3, 140px);
+    justify-content: center;
+
+    @include media("xxs") { grid-template-columns: repeat(2, 140px); }
+  }
+
+  .list-marketing .anchor {
+    align-items: center;
+    background-color: var(--c-purple);
+    border-radius: 16px;
+    color: var(--c-white);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 16px;
+    justify-content: space-evenly;
+    line-height: 1.2;
+    padding: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: background-color var(--transition);
+  }
+
+  .list-marketing .anchor:hover { background-color: var(--c-pink); }
+  .list-marketing .icon { height: 32px; }
+}

@@ -1,0 +1,113 @@
+@use "../base/mixin" as *;
+
+.section.-saved-carts {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .row:last-of-type {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .form-container {
+    align-items: center;
+    display: flex;
+    gap: 16px;
+
+    @include media("xxs") { flex-direction: column; }
+  }
+
+  .form {
+    width: 65%;
+
+    @include media("xxs") { width: 100%; }
+  }
+  
+  .fieldset {
+    flex-direction: row;
+
+    @include media("xxs") { flex-direction: column; }
+  }
+
+  .result-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-height: 480px;
+    overflow: auto;
+  }
+
+  .input:checked + .label .square { border-color: var(--c-black); }
+  .input:checked + .label .square::before { opacity: 1; }
+
+  .label {
+    border-top: 1px solid var(--c-light-gray);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px 16px 16px calc(16px * 2);
+    position: relative;
+  }
+
+  .label:hover .square { border-color: var(--c-black); }
+  .label:hover .square::before { opacity: 1; }
+
+  .label .square {
+    align-items: center;
+    border: 1px solid var(--c-dark-gray);
+    display: flex;
+    height: 16px;
+    width: 16px;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: border-color var(--transition);
+  }
+
+  .label .square::before {
+    background-color: var(--c-black);
+    content: "";
+    height: 8px;
+    width: 8px;
+    opacity: 0;
+    transition: opacity var(--transition);
+  }
+
+  .containers {
+    align-items: center;
+    display: flex;
+    gap: 40px;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .list-info {
+    display: grid;
+    grid-gap: 8px;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include media("xxs") { grid-template-columns: repeat(1, 1fr); }
+  }
+
+  .list-info .strong { color: var(--c-purple); }
+
+  .buttons {
+    display: flex;
+    gap: 8px;
+  }
+
+  .buttons .button {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    line-height: 1.2;
+  }
+
+  .buttons .icon { height: 16px; }
+}

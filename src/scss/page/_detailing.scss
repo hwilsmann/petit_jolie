@@ -1,0 +1,100 @@
+@use "../base/mixin" as *;
+
+.section.-detailing {
+  .row {
+    align-items: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    @include media("xs") { gap: 16px; }
+    @include media("xxs") { flex-direction: column; }
+  }
+
+  .row .col {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: calc(50% - 4px);
+
+    @include media("xs") { width: calc(50% - 8px); }
+    @include media("xxs") { width: 100%; }
+  }
+
+  .swipers {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    @include media("xs") { gap: 16px; }
+  }
+
+  .swiper-thumb-container {
+    width: 85px;
+
+    @include media("xs") { width: 55px; }
+    @include media("xxs") { display: none; }
+  }
+
+  .swiper-thumb-container .swiper {
+    height: 432px;
+
+    @include media("xs") { height: 332px; }
+  }
+
+  .swiper-container {
+    width: calc(100% - 85px);
+    margin: 0;
+    
+    @include media("xs") {
+      width: calc(100% - 55px - 16px);
+      padding: 0;
+    }
+
+    @include media("xxs") { width: 100%; }
+  }
+
+  .reference-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .list-color {
+    display: grid;
+    grid-gap: 8px;
+    grid-template-columns: repeat(10, 1fr);
+    padding-right: calc(40px + 8px);
+
+    @include media("xs") { padding-right: 0; }
+  }
+
+  .list-color .item {
+    border: 1px solid transparent;
+    transition: border-color var(--transition);
+  }
+
+  .list-color .item:hover { border-color: var(--c-black); }
+
+  .list-color .picture {
+    padding-bottom: 133.33%;
+    position: relative;
+  }
+  
+  .list-color .picture img {
+    height: 100%;
+    width: 100%;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 0; 
+  }
+
+  .description-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+.section.-related { padding-top: 0; }

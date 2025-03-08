@@ -91,27 +91,27 @@
     padding: 0;
   }
 
-  .list-test {
+  .list-header {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
   }
 
-  .list-test .item {
+  .list-header .item {
     align-items: center;
     display: flex;
     gap: 8px;
   }
 
-  .list-test .item:not(:last-of-type) {
+  .list-header .item:not(:last-of-type) {
     border-right: 1px solid var(--c-black);
     padding-right: 8px;
 
     @include media("xxs") { display: none; }
   }
 
-  .list-test .icon { height: 16px; }
-  .list-test .item-content { white-space: nowrap; }
+  .list-header .icon { height: 16px; }
+  .list-header .item-content { white-space: nowrap; }
 
   .col.-bottom {
     border-bottom: 1px solid var(--c-black);

@@ -76,7 +76,7 @@ async function images() {
 
 function serve(done) {
     connect.server({
-        root: 'dist',
+        root: './',
         livereload: true,
         port: 8080
     });

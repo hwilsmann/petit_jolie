@@ -47,14 +47,14 @@
     @include media("xxs") { flex-direction: column; }
   }
 
-  .list-test {
+  .list-header {
     align-items: center;
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
   }
 
-  .list-test .button {
+  .list-header .button {
     align-items: center;
     display: flex;
     gap: 8px;
@@ -62,7 +62,7 @@
     text-align: left;
   }
 
-  .list-test .icon { height: 24px; }
+  .list-header .icon { height: 24px; }
 
   .order-container {
     border: 1px solid var(--c-black);

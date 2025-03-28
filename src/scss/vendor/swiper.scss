@@ -1,0 +1,114 @@
+@use "../base/mixin" as *;
+
+.swiper-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin: 0 calc(-40px - 8px);
+  padding: 0 calc(40px + 8px);
+  position: relative;
+
+  @include media("xs") {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.swiper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+}
+
+.swiper.swiper-thumbs .swiper-slide {
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: border-color var(--transition);
+}
+
+.swiper.swiper-thumbs .swiper-slide:hover, .swiper.swiper-thumbs .swiper-slide.swiper-slide-thumb-active { border-color: var(--c-black); }
+
+.swiper.swiper-thumbs .swiper-slide .picture {
+  height: 100%;
+  padding-bottom: 0;
+}
+
+.swiper.swiper-thumbs .swiper-slide .picture img { position: unset; }
+
+.swiper-slide .anchor {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.swiper-slide .picture {
+  padding-bottom: 133.33%;
+  position: relative;
+}
+
+.swiper-slide .picture img {
+  height: 100%;
+  width: 100%;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 0; 
+}
+
+.swiper-slide .description {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.swiper-watch-progress .swiper-slide {
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.swiper-watch-progress .swiper-slide.swiper-slide-visible { opacity: 1; }
+.swiper-watch-progress .swiper-slide:not(.swiper-slide-visible) { pointer-events: none; }
+
+.swiper-pagination {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  position: unset;
+}
+
+.swiper-pagination.-absolute {
+  bottom: 0;
+  left: 0;
+  margin-bottom: 40px;
+  position: absolute;
+}
+
+.swiper-pagination.swiper-pagination-lock { display: none; }
+
+.swiper-pagination-bullet {
+  background-color: var(--c-light-gray);
+  height: 8px;
+  width: 8px;
+  margin: 0 !important;
+  opacity: 1;
+  transition: background-color var(--transition);
+}
+
+.swiper-pagination-bullet:hover, .swiper-pagination-bullet-active { background-color: var(--c-dark-gray); }
+
+.swiper-button {
+  border-radius: var(--radius);
+  height: 40px;
+  width: 40px;
+  transition: background-color var(--transition);
+}
+
+.swiper-button.swiper-button-lock, .swiper-button.swiper-button-disabled { display: none; }
+.swiper-button::after { display: none; }
+.swiper-button .icon { height: 16px; }
+.swiper-button-prev { left: 0; }
+.swiper-button-next { right: 0; }
+.swiper-button:hover { background-color: var(--c-purple); }
+.swiper-button:hover .icon path { stroke: var(--c-white); }

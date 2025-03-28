@@ -1,0 +1,82 @@
+@use "../base/mixin" as *;
+
+.section.-search {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .row:last-of-type {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .form-container {
+    align-items: center;
+    display: flex;
+    gap: 16px;
+
+    @include media("xxs") { flex-direction: column; }
+  }
+
+  .form {
+    width: 65%;
+
+    @include media("xxs") { width: 100%; }
+  }
+
+  .fieldset {
+    flex-direction: row;
+
+    @include media("xxs") { flex-direction: column; }
+  }
+
+  .result-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-height: 480px;
+    overflow: auto;
+  }
+
+  .result {
+    border-top: 1px solid var(--c-light-gray);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .containers {
+    align-items: center;
+    display: flex;
+    gap: 40px;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .list-info {
+    display: grid;
+    grid-gap: 8px;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include media("xxs") { grid-template-columns: repeat(1, 1fr); }
+  }
+
+  .list-info .strong { color: var(--c-purple); }
+
+  .buttons {
+    display: flex;
+    gap: 8px;
+  }
+
+  .buttons .button {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    line-height: 1.2;
+  }
+
+  .buttons .icon { height: 16px; }
+}

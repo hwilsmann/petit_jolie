@@ -1,0 +1,31 @@
+.-button-primary {
+  align-items: center;
+  border: 1px solid transparent;
+  display: flex;
+  font-weight: 600;
+  height: 40px;
+  justify-content: center;
+  line-height: 40px;
+  padding: 0 40px;
+  transition: background-color var(--transition), border-color var(--transition), color var(--transition);
+}
+
+.-button-primary:hover {
+  background-color: var(--c-black);
+  color: var(--c-white);
+}
+
+.-button-primary.-black, .-button-primary.-purple { color: var(--c-white); }
+.-button-primary.-black:hover, .-button-primary.-purple:hover { background-color: transparent; }
+
+.-button-primary.-black { background-color: var(--c-black); }
+.-button-primary.-black:hover {
+  border-color: var(--c-black);
+  color: var(--c-black);
+}
+
+.-button-primary.-purple { background-color: var(--c-purple); }
+.-button-primary.-purple:hover {
+  border-color: var(--c-purple);
+  color: var(--c-purple);
+}

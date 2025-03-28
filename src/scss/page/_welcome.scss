@@ -1,0 +1,47 @@
+@use "../base/mixin" as *;
+
+.section.-welcome {
+  .row {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .col.-top {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .list-welcome {
+    display: grid;
+    grid-gap: 32px;
+    grid-template-columns: repeat(6, 140px);
+    justify-content: center;
+
+    @include media("xxs") { grid-template-columns: repeat(2, 140px); }
+  }
+
+  .list-welcome .anchor {
+    align-items: center;
+    background-color: var(--c-purple);
+    border-radius: 16px;
+    color: var(--c-white);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 16px;
+    justify-content: space-evenly;
+    line-height: 1.2;
+    padding: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: background-color var(--transition);
+  }
+
+  .list-welcome .anchor:hover { background-color: var(--c-pink); }
+  .list-welcome .icon { height: 32px; }
+}
+
+.section.-highlight { padding-top: 0; }

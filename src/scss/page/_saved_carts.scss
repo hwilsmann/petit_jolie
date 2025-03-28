@@ -1,0 +1,239 @@
+@use "../base/mixin" as *;
+
+.section.-saved-carts {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .row:last-of-type {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .form-container {
+    align-items: center;
+    display: flex;
+    gap: 16px;
+
+    @include media("xxs") { flex-direction: column; }
+  }
+
+  .form {
+    width: 65%;
+
+    @include media("xxs") { width: 100%; }
+  }
+  
+  .fieldset {
+    flex-direction: row;
+
+    @include media("xxs") { flex-direction: column; }
+  }
+
+  .result-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .result {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .input:checked + .label .square { border-color: var(--c-black); }
+  .input:checked + .label .square::before { opacity: 1; }
+
+  .label {
+    border-top: 1px solid var(--c-light-gray);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px 16px 16px calc(16px * 2);
+    position: relative;
+  }
+
+  .label:hover .square { border-color: var(--c-black); }
+  .label:hover .square::before { opacity: 1; }
+
+  .label .square {
+    align-items: center;
+    border: 1px solid var(--c-dark-gray);
+    display: flex;
+    height: 16px;
+    width: 16px;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: border-color var(--transition);
+  }
+
+  .label .square::before {
+    background-color: var(--c-black);
+    content: "";
+    height: 8px;
+    width: 8px;
+    opacity: 0;
+    transition: opacity var(--transition);
+  }
+
+  .containers {
+    align-items: center;
+    display: flex;
+    gap: 40px;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .list-info {
+    display: grid;
+    grid-gap: 8px;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include media("xxs") { grid-template-columns: repeat(1, 1fr); }
+  }
+
+  .buttons {
+    display: flex;
+    gap: 8px;
+  }
+
+  .buttons .button {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    line-height: 1.2;
+  }
+
+  .buttons .icon { height: 16px; }
+
+  .button.-details {
+    align-items: center;
+    display: flex;
+    gap: 4px;
+  }
+
+  .button.-details .circle {
+    align-items: center;
+    border: 1px solid var(--c-darken-gray);
+    border-radius: 50%;
+    display: flex;
+    height: 16px;
+    width: 16px;
+    justify-content: center;
+  }
+
+  .details-container {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .cart-container {
+    border: 1px solid var(--c-light-gray);
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cart-container.-show { display: flex; }
+
+  .cart-top {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .cart-item {
+    align-items: center;
+    display: flex;
+    gap: 16px;
+    justify-content: space-between;
+
+    @include media("xxs") { flex-direction: column; }
+  }
+
+  .cart-bottom {
+    align-items: center;
+    background-color: var(--c-light-gray);
+    display: flex;
+    gap: 16px;
+    justify-content: space-between;
+    padding: 16px;
+  }
+
+  .cart-left {
+    align-items: center;
+    display: flex;
+    gap: 16px;
+    width: 65%;
+
+    @include media("xxs") {
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+
+  .cart-right {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include media("xxs") { width: 100%; }
+  }
+
+  .cart-image { width: 125px; }
+
+  .cart-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .picture {
+    padding-bottom: 133.33%;
+    position: relative;
+  }
+  
+  .picture img {
+    height: 100%;
+    width: 100%;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 0; 
+  }
+
+  .list-size {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    max-width: 50%;
+  }
+
+  .list-size .item {
+    border-left: 1px solid var(--c-black);
+    border-bottom: 1px solid var(--c-black);
+    display: flex;
+    justify-content: center;
+    padding: 4px;
+  }
+
+  .list-size .item:first-of-type,
+  .list-size .item:nth-of-type(6) { border-left: none; }
+  .list-size .item:nth-child(n+6) { border-bottom: none; }
+
+  .list-cart {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+}

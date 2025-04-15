@@ -195,4 +195,18 @@
     gap: 8px;
     justify-content: flex-end;
   }
+
+  .numbers {
+    display: flex;
+    gap: 16px;
+  }
+
+  .numbers .label-container { align-items: center; }
+
+  .boxes-container {
+    align-items: center;
+    display: flex;
+    gap: 16px;
+    justify-content: space-between;
+  }
 }
